@@ -6,108 +6,15 @@ y manda las respuestas a tu hoja de Google Sheets.
 
 ---
 
-## Qué hay en esta carpeta
+## Ya está funcionando
 
-| Archivo | Para qué sirve |
+| Qué | Dónde |
 |---|---|
-| `index.html` | La encuesta completa (diseño y funcionamiento). |
-| `logo.png` | El logo de QB54. |
-| `og-imagen.jpg` | La imagen que aparece al mandar el link por WhatsApp. |
-| `manifest.webmanifest` y `sw.js` | Permiten instalar la encuesta en el celular y abrirla sin señal. |
-| `iconos/` | Los íconos de la app. |
-| `apps-script/Codigo.gs` | El código que se pega en tu hoja de Google Sheets. |
-| `README.md` | Estas instrucciones. |
-
-**No subas a GitHub:** `PROGRESO.md`, `PROMPT_ENCUESTA_QB54.md` ni la carpeta `_trabajo` (son notas y herramientas de prueba).
-
----
-
-## 1. Publicar la página en GitHub Pages
-
-GitHub está en inglés; abajo van los nombres exactos de los botones.
-
-1. Entra a [github.com](https://github.com) e inicia sesión (o crea una cuenta gratis).
-2. Arriba a la derecha toca **+** → **New repository**.
-3. En **Repository name** escribe `qb54`. Elige **Public**. **No** marques "Add a README file". Toca **Create repository**.
-4. En la página que aparece, toca el link **uploading an existing file**.
-5. Arrastra a la ventana: `index.html`, `logo.png`, `og-imagen.jpg`, `manifest.webmanifest`, `sw.js`, `README.md` y las carpetas `iconos` y `apps-script`.
-6. Cuando terminen de subir, toca el botón verde **Commit changes**.
-7. Arriba toca **Settings** y luego, en el menú de la izquierda, **Pages**.
-8. En **Build and deployment**: Source = **Deploy from a branch**; Branch = **main** y carpeta **/ (root)**. Toca **Save**.
-9. Espera 1 o 2 minutos y recarga la página. Arriba aparecerá **"Your site is live at …"**.
-
-**Tu link será:**
-
-```
-https://TU-USUARIO.github.io/qb54/
-```
-
-Cambia `TU-USUARIO` por tu nombre de usuario de GitHub (en minúsculas). Si le pusiste otro nombre al repositorio, cambia también `qb54`. Usa siempre la diagonal `/` del final.
-
----
-
-## 2. Conectar tu hoja de Google Sheets
-
-1. Abre tu hoja de Google Sheets → menú **Extensiones** → **Apps Script**.
-2. Borra todo lo que aparece en el editor y pega **todo** el contenido de `apps-script/Codigo.gs`.
-   Tip: en GitHub abre `apps-script/Codigo.gs` y usa el botón **Copy raw file** (el de dos cuadritos).
-   Toca el ícono de **guardar** (el disquete).
-3. Arriba a la derecha: **Implementar** → **Nueva implementación**. Junto a "Seleccionar tipo", toca el engrane ⚙️ → **Aplicación web**.
-4. Llena así:
-   - Descripción: `Encuesta QB54`
-   - **Ejecutar como: Yo** (tu correo)
-   - **Quién tiene acceso: Cualquier usuario**
-
-   Toca **Implementar**.
-5. Google pide permisos: toca **Autorizar acceso** y elige tu cuenta.
-   - Si aparece **"Google no ha verificado esta app"**, es normal: el script lo creaste tú y no está publicado en ninguna tienda. Toca **Configuración avanzada** → **Ir a … (no seguro)** → **Permitir**.
-   - El script solo pide permiso para usar **esta** hoja; no puede ver tus otros archivos.
-6. Copia la **URL de la aplicación web** (la que termina en `/exec`) y toca **Listo**.
-7. Para comprobarla, pega esa URL en el navegador: debe decir **"Encuesta QB54 funcionando"**.
-
-**Revisa la zona horaria de la hoja:** **Archivo** → **Configuración** → **Zona horaria** = *(GMT-06:00) Hora central - Ciudad de México*. Así la columna `recibido` muestra la hora correcta.
-
----
-
-## 3. Pegar la URL en `index.html`
-
-1. En GitHub abre `index.html` y toca el ícono del **lápiz** (Edit this file).
-2. Casi al principio (línea 24), debajo del aviso **PEGA AQUÍ LA URL DE TU APPS SCRIPT**, está esta línea:
-   ```
-   const APPS_SCRIPT_URL = '';
-   ```
-3. Pega tu URL **entre las dos comillas**, sin borrarlas:
-   ```
-   const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfy.../exec';
-   ```
-4. Toca **Commit changes…** y luego **Commit changes**. Espera 1 o 2 minutos.
-
-**Recomendado, en la misma edición:** para que el logo aparezca en la vista previa de WhatsApp, cambia
-`og-imagen.jpg` por el link completo en las líneas 44 y 51:
-
-```
-https://TU-USUARIO.github.io/qb54/og-imagen.jpg
-```
-
----
-
-## 4. Probar
-
-1. Abre tu link en el celular, contesta la encuesta y toca **Enviar**.
-2. En tu hoja aparecerá una pestaña nueva llamada **Respuestas** con la fila (tarda unos segundos).
-3. Borra la fila de prueba: clic derecho en el número de la fila → **Borrar fila**. **No borres la fila 1** (los encabezados).
-
-- Si contestaste pruebas antes de pegar la URL, esas también van a llegar; bórralas igual.
-- Si la fila no llega, toca el logo 5 veces: el panel dice qué está pasando (ver "Problemas comunes").
-
----
-
-## 5. Los links que vas a usar
-
-| Para | Link |
-|---|---|
-| **Parque Naucalli** (tu celular) | `https://TU-USUARIO.github.io/qb54/?lugar=naucalli` |
-| **Video tutorial** (lo mandas a la gente) | `https://TU-USUARIO.github.io/qb54/?origen=video` |
+| **La encuesta** | <https://coliin10.github.io/qb54/> |
+| **Link para el parque Naucalli** | <https://coliin10.github.io/qb54/?lugar=naucalli> |
+| **Link para el video tutorial** | <https://coliin10.github.io/qb54/?origen=video> |
+| **Las respuestas** | Tu hoja de Google **"Respuestas Prueba Piloto"**, pestaña **"Respuestas"** |
+| **Los archivos** | <https://github.com/Coliin10/qb54> (repositorio público) |
 
 - **Otro parque:** cambia `naucalli` por un nombre corto sin espacios, por ejemplo `?lugar=chapultepec`.
 - **Modo parque:** al enviar aparece "¡Gracias!" y a los 3 segundos la encuesta se limpia sola para la siguiente persona. Si alguien la deja a medias, se limpia sola a los 90 segundos. La pantalla no se apaga mientras la página está abierta.
@@ -115,9 +22,23 @@ https://TU-USUARIO.github.io/qb54/og-imagen.jpg
 
 ---
 
-## 6. Preparar el celular para el parque
+## Qué hay en esta carpeta
 
-1. **Con internet**, abre en Chrome el link del parque (el que lleva `?lugar=naucalli`).
+| Archivo | Para qué sirve |
+|---|---|
+| `index.html` | La encuesta completa (diseño y funcionamiento). El logo va incrustado adentro. |
+| `logo.png` | El logo original de QB54. |
+| `og-imagen.jpg` | La imagen que aparece al mandar el link por WhatsApp. |
+| `manifest.webmanifest` y `sw.js` | Permiten instalar la encuesta en el celular y abrirla sin señal. |
+| `iconos/` | Los íconos de la app. |
+| `apps-script/Codigo.gs` | El código que está pegado en tu hoja de Google Sheets. |
+| `README.md` | Estas instrucciones. |
+
+---
+
+## 1. Preparar el celular para el parque
+
+1. **Con internet**, abre en Chrome el link del parque: <https://coliin10.github.io/qb54/?lugar=naucalli>
 2. Toca el menú **⋮** → **Agregar a la pantalla principal** (o **Instalar app**) → **Instalar**.
 3. Abre la app desde el ícono **QB54** al menos una vez **con internet**. Así se guarda todo para funcionar sin señal.
 4. Toca el logo 5 veces y revisa que el panel diga **Lugar: naucalli**. Toca **Cerrar**.
@@ -127,7 +48,7 @@ https://TU-USUARIO.github.io/qb54/og-imagen.jpg
 
 ---
 
-## 7. Descargar los resultados
+## 2. Descargar los resultados
 
 1. En tu hoja, abre la pestaña **Respuestas**.
 2. **Archivo** → **Descargar** → **Microsoft Excel (.xlsx)** o **Valores separados por comas (.csv)** (el CSV descarga solo la pestaña que estás viendo).
@@ -141,20 +62,20 @@ Tip para decidir el precio: **Insertar** → **Tabla dinámica**. En Filas pon `
 
 ---
 
-## 8. Cerrar la encuesta
+## 3. Cerrar la encuesta
 
-En Apps Script: **Implementar** → **Administrar implementaciones** → elige la implementación → **Archivar**.
+En tu hoja: **Extensiones** → **Apps Script** → **Implementar** → **Administrar implementaciones** → elige la implementación → **Archivar**.
 Desde ese momento ya no entran respuestas. Si algún celular tenía respuestas pendientes, se quedan guardadas en ese celular y puedes sacarlas con el respaldo CSV del panel.
 
 ---
 
-## 9. Si cambias el script después
+## 4. Si cambias el código de la hoja (Apps Script)
 
 1. Pega el código nuevo en Apps Script y guarda.
 2. **Implementar** → **Administrar implementaciones** → toca el **lápiz** (Editar).
 3. En **Versión** elige **Nueva versión** → **Implementar**.
 
-Así la URL `/exec` **no cambia** y no tienes que tocar `index.html`.
+Así la URL `/exec` **no cambia** y la encuesta sigue funcionando sin tocar `index.html`.
 (No uses "Nueva implementación": eso crea una URL distinta.)
 
 ---
@@ -181,24 +102,34 @@ No borres los datos de Chrome del celular mientras haya respuestas pendientes.
 Después de contestar con el link de video, ese celular queda marcado como "ya contestó".
 Para volver a probar, abre el link en una **ventana de incógnito**.
 
-## Si cambias el logo o los íconos
+## Si cambias la página, el logo o los íconos
 
-En `sw.js` cambia `qb54-v1` por `qb54-v2` (y así sucesivamente), para que los celulares descarguen los nuevos.
-Los cambios en `index.html` llegan solos la siguiente vez que se abre la página con internet.
+- Los cambios en `index.html` llegan solos a los celulares la siguiente vez que se abre la página con internet.
+- El logo va incrustado dentro de `index.html`: si cambias `logo.png`, hay que volver a incrustarlo.
+- Si cambias los íconos, en `sw.js` cambia `qb54-v1` por `qb54-v2` (y así sucesivamente).
 
 ## Problemas comunes
 
 | Lo que ves en el panel | Qué hacer |
 |---|---|
-| "Falta pegar la URL del Apps Script" | Haz el paso 3. |
+| "No se pudo enviar: no hay conexión o la URL no es correcta" | Si hay señal, abre la URL del script en el navegador: debe decir "Encuesta QB54 funcionando". Revisa también que la implementación no esté archivada. |
+| "Falta pegar la URL del Apps Script" | La línea `APPS_SCRIPT_URL` (línea 24 de `index.html`) quedó vacía. |
 | "La línea APPS_SCRIPT_URL tiene un error" | Revisa que la URL esté entre comillas `'...'` y que termine en `;`. |
-| "No se pudo enviar: no hay conexión o la URL no es correcta" | Si hay señal: revisa que la URL termine en `/exec` y que el acceso sea "Cualquier usuario" (paso 2). |
-| "La URL del Apps Script debe terminar en /exec" | Copiaste otra URL; usa la de la aplicación web (paso 2, punto 6). |
 
-- **Cambié `index.html` y el celular sigue igual:** espera 2 minutos y abre la página con internet. A veces hay que abrirla dos veces.
+- **Cambié algo y el celular sigue igual:** espera 2 minutos y abre la página con internet. A veces hay que abrirla dos veces.
 
 ## Columnas de la hoja
 
 `fecha_hora` (hora del celular), `id`, `origen` (parque o video), `lugar`, `nombre`, `genero`, `edad`,
 `experiencia`, `calificacion` (1 a 5), `jugaria_seguido`, `compraria`, `precio`, `a_ningun_precio`
 y `recibido` (hora en que llegó a la hoja).
+
+---
+
+## Cómo se publicó (por si hay que repetirlo)
+
+1. **GitHub Pages:** repositorio público `qb54` en la cuenta `Coliin10` → **Settings** → **Pages** → **Deploy from a branch** → `main` y `/ (root)`.
+2. **Google Sheets:** en la hoja, **Extensiones** → **Apps Script** → pegar `apps-script/Codigo.gs` → guardar → **Implementar** → **Nueva implementación** → engrane ⚙️ → **App web** → Ejecutar como: **Yo** · Usuarios con acceso: **Cualquiera** → **Implementar** → **Autorizar acceso**.
+   Si aparece "Google no verificó esta app", es normal (el código es tuyo): **Configuración avanzada** → **Ir a Encuesta QB54 (no seguro)** → **Permitir**.
+3. **Conectar:** la URL que termina en `/exec` va en la línea 24 de `index.html` (`APPS_SCRIPT_URL`).
+4. **Zona horaria:** en la hoja, **Archivo** → **Configuración** → *(GMT-06:00) Hora central - Ciudad de México*, para que la columna `recibido` muestre la hora correcta.
